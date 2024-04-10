@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  color: #fff;
+  width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+  background: #c94b4b; /* fallback for old browsers */
+  background-image: linear-gradient(
+    to left bottom,
+    #18181b,
+    #483049,
+    #91435d,
+    #d06051,
+    #ed982c
+  );
+
+  
+
+}
