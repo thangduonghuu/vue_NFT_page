@@ -12,7 +12,7 @@ export default defineComponent({
   data() {
     return {
       rotation: 0,
-      textIndex: 0,
+      textIndex: 1,
       ListImage: [
         {
           name: "hero-image-1",
@@ -65,10 +65,8 @@ export default defineComponent({
   mounted() {
     setInterval(() => {
       this.rotateActive();
-    }, 3000);
-    setInterval(() => {
       this.ActiveText();
-    }, 2000);
+    }, 3000);
   },
 
   setup() {
@@ -82,10 +80,18 @@ export default defineComponent({
     <div class="flex flex-col justify-center">
       <h1 class="header add-font">NFT</h1>
       <div class="container-right" ref="containerRight">
-        <div class="add-color add-font">Orange</div>
-        <div class="add-color add-font">Green</div>
-        <div class="add-color add-font">Blue</div>
-        <div class="add-color add-font">Purple</div>
+        <div class="add-color add-font active">
+          <img src="../assets/image/ORANGE.png" />
+        </div>
+        <div class="add-color add-font">
+          <img src="../assets/image/GREEN.png" />
+        </div>
+        <div class="add-color add-font">
+          <img class="max-h-39" src="../assets/image/BLUE.png" />
+        </div>
+        <div class="add-color add-font">
+          <img src="../assets/image/PURPLE.png" />
+        </div>
       </div>
       <p class="description_coin">
         Fuape is a collection of 1000 funny ape NFTs - unique digital
@@ -147,9 +153,16 @@ h1 {
   background: #f8ca53;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+
   &.active {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: textIn 0.5s ease-in;
+
+    > img {
+      max-height: 200px;
+    }
   }
 }
 .description_coin {
@@ -162,7 +175,6 @@ h1 {
   display: flex;
   gap: 2rem;
   font-size: 14px;
-  /* justify-content: space-between; */
   opacity: 0.5;
 }
 .title_description {
@@ -170,7 +182,6 @@ h1 {
   display: flex;
   font-size: 16px;
   gap: 2rem;
-  /* justify-content: space-between; */
 }
 .button-description {
   width: 100%;
@@ -185,8 +196,7 @@ h1 {
   height: 1200px;
   border: 2px solid #000;
   border-radius: 50%;
-  transition: all 2s linear;
-  /* animation: rotateActive 5s forwards; */
+  transition: all 0.5s linear;
 }
 .container .icon {
   position: relative;
@@ -222,7 +232,7 @@ h1 {
 
 .container-right {
   position: relative;
-  height: 200px;
+  height: 160px;
   overflow: hidden;
 }
 
